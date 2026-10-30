@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up | THE CLASSIC SK & SONS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #090909;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+    min-height: 80px;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #292318;
+}
+
+.logo {
+    color: #d4af37;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.navbar a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.navbar a:hover {
+    color: #d4af37;
+}
+
+/* MAIN SECTION */
+.main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 20px;
+    background:
+        radial-gradient(ellipse at 15% 50%, #332714 0%, transparent 38%),
+        radial-gradient(ellipse at 90% 10%, #242018 0%, transparent 35%),
+        #090909;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #5b4924;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 70px #000;
+}
+
+/* LEFT FASHION PANEL */
+.fashion {
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 45px;
+    background:
+        linear-gradient(to top, #080808 5%, rgba(0,0,0,.3) 65%),
+        url('https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1000&q=85')
+        center/cover no-repeat;
+}
+
+.collection {
+    color: #d4af37;
+    letter-spacing: 4px;
+    font-size: 10px;
+    margin-bottom: 15px;
+}
+
+.fashion h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(35px, 4vw, 52px);
+    line-height: 1.05;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.gold-line {
+    width: 65px;
+    height: 2px;
+    background: #d4af37;
+    margin-bottom: 25px;
+}
+
+.fashion p {
+    color: #d0d0d0;
+    font-size: 12px;
+    line-height: 1.9;
+    max-width: 310px;
+}
+
+/* SIGNUP PANEL */
+.signup-panel {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 38px 42px;
+    background: linear-gradient(145deg, #171717, #101010);
+}
+
+.small-logo {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    color: #d4af37;
+    font-size: 27px;
+    letter-spacing: 4px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaa;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-top: 7px;
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.description {
+    text-align: center;
+    color: #999;
+    font-size: 11px;
+    margin-bottom: 22px;
+    line-height: 1.7;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: #ddd;
+    font-size: 10px;
+    letter-spacing: .5px;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    height: 43px;
+    padding: 0 13px;
+    background: #0b0b0b;
+    border: 1px solid #39352b;
+    border-radius: 3px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 11px;
+    outline: none;
+    transition: .3s;
+}
+
+input:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 10px #d4af371c;
+}
+
+input::placeholder {
+    color: #777;
+}
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 65px;
+}
+
+.toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d4af37;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin: 5px 0 20px;
+}
+
+.terms input {
+    accent-color: #d4af37;
+    margin-top: 2px;
+}
+
+.terms label {
+    margin: 0;
+    color: #aaa;
+    font-size: 10px;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.submit {
+    width: 100%;
+    min-height: 47px;
+    border: 1px solid #d4af37;
+    border-radius: 3px;
+    background: linear-gradient(100deg, #b9952e, #f1d77d, #c6a23a);
+    color: #15110a;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.submit:hover {
+    background: #fff0ae;
+    box-shadow: 0 0 22px #d4af3733;
+    transform: translateY(-2px);
+}
+
+.message {
+    display: none;
+    color: #d4af37;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 13px;
+}
+
+.bottom {
+    text-align: center;
+    color: #999;
+    font-size: 10px;
+    margin-top: 20px;
+    line-height: 2;
+}
+
+.bottom a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.bottom a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+.footer {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #292318;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.footer span {
+    color: #d4af37;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 700px) {
+    .navbar {
+        min-height: 68px;
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .navbar a {
+        font-size: 9px;
+    }
+
+    .main {
+        padding: 25px 15px;
+    }
+
+    .wrapper {
+        max-width: 430px;
+        grid-template-columns: 1fr;
+    }
+
+    .fashion {
+        min-height: 230px;
+        padding: 28px;
+        background-position: center 40%;
+    }
+
+    .fashion h1 {
+        font-size: 35px;
+    }
+
+    .fashion p {
+        font-size: 11px;
+    }
+
+    .signup-panel {
+        padding: 35px 25px;
+    }
+
+    h2 {
+        margin-top: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">SK & SONS</div>
+    <a href="index.html">← BACK TO HOME</a>
+</header>
+
+<main class="main">
+    <div class="wrapper">
+
+        <section class="fashion">
+            <div class="collection">THE SIGNATURE COLLECTION</div>
+            <div class="gold-line"></div>
+
+            <h1>Make Your<br>First Impression.</h1>
+
+            <p>
+                Timeless elegance. Refined details.
+                Create your account and discover a wardrobe
+                crafted for the modern gentleman.
+            </p>
+        </section>
+
+        <section class="signup-panel">
+
+            <div class="small-logo">SK & SONS</div>
+            <div class="subtitle">THE CLASSIC GENTLEMEN</div>
+
+            <h2>Create Account</h2>
+
+            <p class="description">
+                Join us and discover your signature style.
+            </p>
+
+            <form id="signupForm">
+
+                <div class="input-group">
+                    <label for="fullName">FULL NAME</label>
+                    <input type="text" id="fullName"
+                           placeholder="Enter your full name"
+                           autocomplete="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">EMAIL ADDRESS</label>
+                    <input type="email" id="email"
+                           placeholder="Enter your email"
+                           autocomplete="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">PASSWORD</label>
+                    <div class="password-box">
+                        <input type="password" id="password"
+                               placeholder="Minimum 6 characters"
+                               minlength="6"
+                               autocomplete="new-password" required>
+                        <button type="button" class="toggle"
+                                onclick="togglePassword('password', this)">
+                            SHOW
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmPassword">CONFIRM PASSWORD</label>
+                    <div class="password-box">
+                        <input type="password" id="confirmPassword"
+                               placeholder="Re-enter your password"
+                               minlength="6"
+                               autocomplete="new-password" required>
+                        <button type="button" class="toggle"
+                                onclick="togglePassword('confirmPassword', this)">
+                            SHOW
+                        </button>
+                    </div>
+                </div>
+
+                <div class="terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the terms and conditions.
+                    </label>
+                </div>
+
+                <button type="submit" class="submit">
+                    CREATE ACCOUNT
+                </button>
+
+                <p class="message" id="formMessage" role="status"></p>
+
+            </form>
+
+            <div class="bottom">
+                Already have an account?
+                <a href="login.html">Login here</a>
+            </div>
+
+        </section>
+    </div>
+</main>
+
+<footer class="footer">
+    © 2026 <span>THE CLASSIC SK & SONS</span> · ELEGANCE NEVER FADES
+</footer>
+
+<script>
+function togglePassword(id, button) {
+    const field = document.getElementById(id);
+
+    if (field.type === "password") {
+        field.type = "text";
+        button.textContent = "HIDE";
+    } else {
+        field.type = "password";
+        button.textContent = "SHOW";
+    }
+}
+
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const form = this;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const message = document.getElementById("formMessage");
+
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        message.style.display = "block";
+        message.style.color = "#ff7777";
+        message.textContent = "Passwords do not match. Please try again.";
+        return;
+    }
+
+    message.style.display = "block";
+    message.style.color = "#d4af37";
+    message.textContent = "Details accepted! Redirecting to login...";
+
+    setTimeout(function() {
+        window.location.href = "login.html";
+    }, 1000);
+});
+</script>
+
+</body>
+</html>

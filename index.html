@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>THE CLASSIC SK &amp; SONS | Luxury Menswear</title>
+
+    <meta name="description"
+          content="Discover premium formal shirts, tailored suits, accessories and new arrivals at THE CLASSIC SK & SONS.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Essential layout fixes */
+        .nav-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .nav {
+            flex-wrap: wrap;
+        }
+
+        .hero,
+        .collection-heading,
+        .collection,
+        .brand-statement,
+        .luxury-footer {
+            width: 100%;
+            min-width: 0;
+        }
+
+        .collection {
+            align-items: stretch;
+        }
+
+        .image-fallback {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            min-height: 200px;
+            padding: 20px;
+            color: #f2d675;
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 20px;
+            background: linear-gradient(135deg, #171717, #292315);
+        }
+
+        .product-image img {
+            background: #202020;
+        }
+
+        @media (min-width: 601px) {
+            .nav-top {
+                flex: 0 0 auto;
+            }
+
+            .nav-links {
+                flex: 1 1 auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-top {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="nav" aria-label="Main navigation">
+
+            <div class="nav-top">
+                <a href="index.html" class="brand">
+                    THE CLASSIC SK &amp; SONS
+                </a>
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navLinks">
+                    ☰
+                </button>
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <a href="new arrival.html">NEW ARRIVALS</a>
+                <a href="suits.html">SUITS</a>
+                <a href="FORMAL SHIRT.html">FORMAL SHIRTS</a>
+                <a href="accessiors.html">ACCESSORIES</a>
+            </div>
+
+            <div class="nav-actions">
+                <form class="search" id="searchForm" role="search">
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+                    <input
+                        type="search"
+                        id="searchInput"
+                        class="search-input"
+                        placeholder="Search collections..."
+                        aria-label="Search collections">
+                </form>
+
+                <a href="login.html" class="login-link">Login</a>
+            </div>
+
+            <a href="cart.html" class="cart-link">
+              🛒 Cart (<span id="cartCount">0</span>)
+            </a>
+        </nav>
+
+        <hr class="gold-line">
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <p class="hero-label">THE ART OF DRESSING WELL</p>
+
+        <h1>EXPLORE THE COLLECTION</h1>
+
+        <p>
+            Where tradition meets contemporary elegance.
+            Discover timeless style crafted for the modern gentleman.
+        </p>
+
+        <a href="#collections" class="hero-button">
+            DISCOVER OUR COLLECTION
+        </a>
+    </section>
+
+    <!-- COLLECTION HEADING -->
+    <section class="collection-heading" id="collections">
+        <h2>OUR SIGNATURE COLLECTIONS</h2>
+        <p>Refined essentials. Exceptional style. Timeless sophistication.</p>
+        <div class="heading-decoration"></div>
+    </section>
+
+    <!-- COLLECTION CARDS -->
+    <main>
+        <section
+            class="collection"
+            id="collectionGrid"
+            aria-label="Product collections">
+
+            <!-- FORMAL SHIRTS -->
+            <article
+                class="product-card"
+                data-search="formal shirt shirts office wear business shirt">
+
+                <div class="product-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=900&q=85"
+                        alt="Premium men's formal shirt"
+                        loading="lazy"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                    <div class="image-fallback">Premium Formal Shirts</div>
+                    <span class="image-label">TIMELESS STYLE</span>
+                </div>
+
+                <div class="product-info">
+                    <h3>Premium Formal Shirts</h3>
+                    <p>
+                        Sharp tailoring for business, special occasions
+                        and everyday elegance.
+                    </p>
+
+                    <a href="FORMAL SHIRT.html" class="explore-link">
+                        EXPLORE SHIRTS &#8594;
+                    </a>
+                </div>
+            </article>
+
+            <!-- SUITS -->
+            <article
+                class="product-card"
+                data-search="suit suits blazer formal wear wedding tailoring">
+
+                <div class="product-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=900&q=85"
+                        alt="Elegant tailored men's suit"
+                        loading="lazy"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                    <div class="image-fallback">Signature Tailored Suits</div>
+                    <span class="image-label">SIGNATURE EDITION</span>
+                </div>
+
+                <div class="product-info">
+                    <h3>Signature Suits</h3>
+                    <p>
+                        Refined silhouettes and timeless tailoring
+                        for memorable occasions.
+                    </p>
+
+                    <a href="suits.html" class="explore-link">
+                        EXPLORE SUITS &#8594;
+                    </a>
+                </div>
+            </article>
+
+            <!-- ACCESSORIES -->
+            <article
+                class="product-card"
+                data-search="accessories belt wallet watch sunglasses tie cufflinks">
+
+                <div class="product-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=900&q=85"
+                        alt="Premium leather men's accessories"
+                        loading="lazy"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                    <div class="image-fallback">Premium Accessories</div>
+                    <span class="image-label">THE FINISHING TOUCH</span>
+                </div>
+
+                <div class="product-info">
+                    <h3>Premium Accessories</h3>
+                    <p>
+                        Complete your look with refined accessories
+                        and carefully selected details.
+                    </p>
+
+                    <a href="accessiors.html" class="explore-link">
+                        EXPLORE ACCESSORIES &#8594;
+                    </a>
+                </div>
+            </article>
+
+            <!-- NEW ARRIVALS -->
+            <article
+                class="product-card"
+                data-search="new arrivals latest collection trousers pants fashion">
+
+                <div class="product-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=900&q=85"
+                        alt="Modern men's tailored trousers"
+                        loading="lazy"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                    <div class="image-fallback">Latest Arrivals</div>
+                    <span class="image-label">NEW SEASON</span>
+                </div>
+
+                <div class="product-info">
+                    <h3>Latest Arrivals</h3>
+                    <p>
+                        Discover fresh styles and modern wardrobe
+                        essentials for every occasion.
+                    </p>
+
+                    <a href="new arrival.html" class="explore-link">
+                        EXPLORE NEW ARRIVALS &#8594;
+                    </a>
+                </div>
+            </article>
+
+            <p class="no-results" id="noResults">
+                No matching collections found. Try another search.
+            </p>
+
+        </section>
+    </main>
+
+    <!-- BRAND STATEMENT -->
+    <section class="brand-statement">
+        <h2>Elegance in Every Detail</h2>
+        <p>
+            At THE CLASSIC SK &amp; SONS, we believe great style never
+            goes out of fashion. Discover carefully selected menswear
+            that brings together classic sophistication and contemporary
+            design.
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="luxury-footer">
+        <div class="footer-container">
+
+            <!-- BRAND -->
+            <div class="footer-col">
+                <div style="margin-bottom: 15px;">
+                    <svg
+                        width="65"
+                        height="55"
+                        viewBox="0 0 100 80"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="SK logo">
+
+                        <defs>
+                            <linearGradient
+                                id="goldGradient"
+                                x1="0%"
+                                y1="0%"
+                                x2="100%"
+                                y2="100%">
+                                <stop offset="0%" stop-color="#f5d77f"/>
+                                <stop offset="50%" stop-color="#d4af37"/>
+                                <stop offset="100%" stop-color="#aa7c11"/>
+                            </linearGradient>
+                        </defs>
+
+                        <path
+                            d="M42 22 C42 12 18 12 18 28 C18 44 48 42 48 58 C48 74 18 74 18 64"
+                            stroke="url(#goldGradient)"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                            fill="none"/>
+
+                        <path
+                            d="M46 14 L46 66 M46 40 L72 16 M46 40 L72 66"
+                            stroke="url(#goldGradient)"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                            fill="none"/>
+                    </svg>
+                </div>
+
+                <h2 class="footer-logo">SK &amp; SONS</h2>
+                <p class="brand-title-sub">THE CLASSIC SK &amp; SONS</p>
+
+                <p class="footer-desc">
+                    Where tradition meets contemporary elegance in
+                    refined menswear.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-col">
+                <h3>QUICK LINKS</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="suits.html">Bespoke Suits</a></li>
+                    <li><a href="FORMAL SHIRT.html">Formal Shirts</a></li>
+                    <li><a href="accessiors.html">Accessories</a></li>
+                    <li><a href="new arrival.html">New Arrivals</a></li>
+                </ul>
+            </div>
+
+            <!-- CUSTOMER CARE -->
+            <div class="footer-col">
+                <h3>CUSTOMER CARE</h3>
+                <ul>
+                    <li>
+                        <a href="mailto:support@classicsk.com?subject=FAQ">
+                            FAQ &amp; Help
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:support@classicsk.com?subject=Shipping">
+                            Shipping &amp; Delivery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:support@classicsk.com?subject=Returns">
+                            Returns &amp; Exchanges
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:support@classicsk.com?subject=Privacy">
+                            Privacy Policy Enquiry
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:support@classicsk.com?subject=Terms">
+                            Terms &amp; Conditions Enquiry
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-col">
+                <h3>CONNECT WITH US</h3>
+
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Pinterest">P</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                </div>
+
+                <p class="address">
+                    &#128205; Mumbai, Maharashtra, India<br>
+                    &#128222; +91 98765 43210<br>
+                    &#9993;
+                    <a
+                        href="mailto:support@classicsk.com"
+                        style="color: #d4af37; text-decoration: none;">
+                        support@classicsk.com
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 THE CLASSIC SK &amp; SONS.
+                All Rights Reserved.
+            </p>
+            <p class="creator-credit">
+                Created by <span>Pratham Kadam</span>
+            </p>
+        </div>
+        
+
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mobile navigation
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+
+        // Close the mobile menu after clicking a link
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation menu");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+        // Search collections
+        const searchInput = document.getElementById("searchInput");
+        const searchForm = document.getElementById("searchForm");
+        const cards = document.querySelectorAll(".product-card");
+        const noResults = document.getElementById("noResults");
+
+        function filterCollections() {
+            const query = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            cards.forEach(function (card) {
+                const searchableText = (
+                    card.innerText + " " + card.dataset.search
+                ).toLowerCase();
+
+                const matches = searchableText.includes(query);
+
+                card.style.display = matches ? "flex" : "none";
+
+                if (matches) {
+                    visibleCount++;
+                }
+            });
+
+            noResults.style.display =
+                visibleCount === 0 ? "block" : "none";
+        }
+
+        searchInput.addEventListener("input", filterCollections);
+
+        searchForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            filterCollections();
+        });
+
+        function updateCartCount() {
+    const cart = JSON.parse(
+        localStorage.getItem("classicSKCart") || "[]"
+    );
+
+    const count = cart.reduce(
+        (sum, item) => sum + Number(item.qty || 0), 0
+    );
+
+    const display = document.getElementById("cartCount");
+    if (display) display.textContent = count;
+}
+
+updateCartCount();
+    </script>
+
+</body>
+</html>

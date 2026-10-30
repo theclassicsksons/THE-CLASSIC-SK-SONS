@@ -1,0 +1,866 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Suits | THE CLASSIC SK & SONS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0d0d0d;
+            --gold: #d4af37;
+            --white: #ffffff;
+            --grey: #b8b8b8;
+            --card: #171717;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button, input {
+            font: inherit;
+        }
+
+        /* HEADER */
+        header {
+            background: #080808;
+            border-bottom: 1px solid #343024;
+            padding: 20px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: var(--gold);
+            font-family: Georgia, serif;
+            font-size: 23px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            display: block;
+            color: #eee;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            letter-spacing: 4px;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--gold);
+        }
+
+        .login-btn {
+            border: 1px solid var(--gold);
+            padding: 9px 17px;
+            color: var(--gold);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 350px;
+            padding: 70px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:
+                linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.83)),
+                url("https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1800&q=85")
+                center 35% / cover;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 5px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(36px, 6vw, 65px);
+            font-weight: normal;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: #ddd;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        /* PAGE CONTENT */
+        .container {
+            max-width: 1250px;
+            margin: auto;
+            padding: 55px 25px 70px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, serif;
+            font-size: 34px;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 span {
+            color: var(--gold);
+        }
+
+        .section-heading p {
+            color: var(--grey);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* SEARCH */
+        .tools {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 35px 0;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 220px;
+            max-width: 380px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 13px 15px;
+            background: #171717;
+            border: 1px solid #454545;
+            color: white;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--gold);
+        }
+
+        .filters {
+            display: flex;
+            gap: 9px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            color: #ddd;
+            border: 1px solid #454545;
+            padding: 11px 15px;
+            cursor: pointer;
+            font-size: 11px;
+            transition: 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: #111;
+        }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background: var(--card);
+            border: 1px solid #292929;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold);
+        }
+
+        .image-wrap {
+            position: relative;
+            overflow: hidden;
+            background: #222;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 290px;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .tag {
+            position: absolute;
+            top: 13px;
+            left: 12px;
+            background: var(--gold);
+            color: #111;
+            padding: 7px 9px;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .product-info {
+            padding: 18px 15px;
+        }
+
+        .product-info h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 9px;
+        }
+
+        .description {
+            color: #aaa;
+            font-size: 11px;
+            line-height: 1.6;
+            min-height: 35px;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .price {
+            color: var(--gold);
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .old-price {
+            color: #888;
+            font-size: 11px;
+            text-decoration: line-through;
+            margin-left: 5px;
+        }
+
+        .add-btn {
+            width: 100%;
+            padding: 12px 8px;
+            border: 1px solid var(--gold);
+            background: transparent;
+            color: var(--gold);
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .add-btn:hover {
+            background: var(--gold);
+            color: #111;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            color: #bbb;
+            padding: 35px 10px;
+            line-height: 1.8;
+        }
+
+        /* BANNER */
+        .custom-banner {
+            margin-top: 65px;
+            padding: 40px 25px;
+            border: 1px solid #57491f;
+            text-align: center;
+            background: linear-gradient(120deg, #17140b, #101010);
+        }
+
+        .custom-banner h2 {
+            font-family: Georgia, serif;
+            font-size: 29px;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .custom-banner h2 span {
+            color: var(--gold);
+        }
+
+        .custom-banner p {
+            color: #bbb;
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+
+        .banner-link {
+            display: inline-block;
+            padding: 12px 22px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .banner-link:hover {
+            background: var(--gold);
+            color: #111;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #070707;
+            border-top: 1px solid #333;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        footer .footer-logo {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            color: #999;
+            font-size: 11px;
+            line-height: 1.9;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 18px 0;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            font-size: 11px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            border-top: 1px solid #222;
+            margin-top: 22px;
+            padding-top: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1000px) {
+            .product-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            header {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 18px 15px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 13px;
+            }
+
+            .product-card img {
+                height: 230px;
+            }
+
+            .product-info {
+                padding: 13px 10px;
+            }
+
+            .price {
+                font-size: 14px;
+            }
+
+            .tools {
+                align-items: stretch;
+            }
+
+            .search-box {
+                max-width: none;
+            }
+
+            .filters {
+                justify-content: center;
+            }
+
+            .filter-btn {
+                padding: 10px 11px;
+            }
+
+            .container {
+                padding: 40px 13px 50px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card img {
+                height: 340px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="logo">
+            THE CLASSIC SK & SONS
+            <span>THE CLASSIC GENTLEMEN</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="new arrival.html">New Arrivals</a>
+            <a href="suits.html" class="active">Suits</a>
+            <a href="FORMAL SHIRT.html">Formal Shirts</a>
+            <a href="accessiors.html">Accessories</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <p class="eyebrow">THE ART OF DRESSING WELL</p>
+        <h1>Luxury <span>Suits</span></h1>
+        <p>
+            Discover timeless tailoring, refined details and sophisticated
+            styles made for the modern gentleman.
+        </p>
+    </section>
+
+    <!-- PRODUCTS -->
+    <main class="container">
+        <div class="section-heading">
+            <h2>Our <span>Suit Collection</span></h2>
+            <p>Explore classic, premium and contemporary styles for every occasion.</p>
+        </div>
+
+        <div class="tools">
+            <div class="search-box">
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search suits..."
+                    aria-label="Search suits"
+                >
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All Suits</button>
+                <button class="filter-btn" data-filter="classic">Classic</button>
+                <button class="filter-btn" data-filter="premium">Premium</button>
+                <button class="filter-btn" data-filter="wedding">Wedding</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+            <!-- PRODUCT 1 -->
+            <article class="product-card" data-category="classic">
+                <div class="image-wrap">
+                    <span class="tag">BESTSELLER</span>
+                    <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&w=700&q=80"
+                         alt="Classic black formal suit" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Classic Black Suit</h3>
+                    <p class="description">A timeless look for formal occasions.</p>
+                    <div class="price-row">
+                        <span class="price">₹5,999</span>
+                        <span class="old-price">₹7,499</span>
+                    </div>
+                    <button class="add-btn" data-name="Classic Black Suit" data-price="5999">
+                        ADD TO CART
+                    </button>
+                </div>
+            </article>
+
+            <!-- PRODUCT 2 -->
+            <article class="product-card" data-category="premium">
+                <div class="image-wrap">
+                    <span class="tag">PREMIUM</span>
+                    <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=700&q=80"
+                         alt="Navy blue tailored suit" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Royal Black Suit</h3>
+                    <p class="description">Elegant tailoring with a modern finish.</p>
+                    <div class="price-row">
+                        <span class="price">₹6,999</span>
+                        <span class="old-price">₹8,499</span>
+                    </div>
+                    <button class="add-btn" data-name="Royal Black Suit" data-price="6999">
+                       ADD TO CART
+                    </button>
+                </div>
+            </article>
+
+            <!-- PRODUCT 3 -->
+            <article class="product-card" data-category="wedding">
+                <div class="image-wrap">
+                    <span class="tag">WEDDING</span>
+                    <img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=700&q=80"
+                         alt="Elegant wedding suit" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Wedding Gentleman Suit</h3>
+                    <p class="description">A refined choice for special celebrations.</p>
+                    <div class="price-row">
+                        <span class="price">₹8,999</span>
+                        <span class="old-price">₹10,499</span>
+                    </div>
+                    <button class="add-btn" data-name="Wedding Gentleman Suit" data-price="8999">
+                       ADD TO CART
+                    </button>
+                </div>
+            </article>
+
+            <!-- PRODUCT 4 -->
+            <article class="product-card" data-category="classic">
+                <div class="image-wrap">
+                    <span class="tag">CLASSIC</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjq9BNgpe7VmyEseWa9d93fqrt0rIUKl7oZNzlmeS9Qw&s=10"
+                         alt="Charcoal grey business suit" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Charcoal Grey Suit</h3>
+                    <p class="description">A versatile style for office and events.</p>
+                    <div class="price-row">
+                        <span class="price">₹6,499</span>
+                        <span class="old-price">₹7,999</span>
+                    </div>
+                    <button class="add-btn" data-name="Charcoal Grey Suit" data-price="6499">
+                        ADD TO CART
+                    </button>
+                </div>
+            </article>
+
+            <!-- PRODUCT 5 -->
+            <article class="product-card" data-category="premium">
+                <div class="image-wrap">
+                    <span class="tag">NEW STYLE</span>
+                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=700&q=80"
+                         alt="Premium tailored gentleman suit" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Signature Premium Suit</h3>
+                    <p class="description">Sharp lines with sophisticated detailing.</p>
+                    <div class="price-row">
+                        <span class="price">₹9,499</span>
+                        <span class="old-price">₹11,000</span>
+                    </div>
+                    <button class="add-btn" data-name="Signature Premium Suit" data-price="9499">
+                      ADD TO CART
+                    </button>
+                </div>
+            </article>
+
+            <!-- PRODUCT 6 -->
+            <article class="product-card" data-category="wedding">
+                <div class="image-wrap">
+                    <span class="tag">SPECIAL</span>
+                    <img src="https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?auto=format&fit=crop&w=700&q=80"
+                         alt="Light coloured suit for special occasions" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Ivory Celebration Suit</h3>
+                    <p class="description">A polished look for daytime celebrations.</p>
+                    <div class="price-row">
+                        <span class="price">₹8,499</span>
+                        <span class="old-price">₹9,999</span>
+                    </div>
+                    <button class="add-btn" data-name="Ivory Celebration Suit" data-price="8499">
+                       ADD TO CART
+                    </button>
+                </div>
+            </article>
+
+            <!-- PRODUCT 7 -->
+            <article class="product-card" data-category="classic">
+                <div class="image-wrap">
+                    <span class="tag">SMART FORMAL</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXY7rLudrPX3y5fgaval8bQqBRFluSLhopHm63FiCQFg&s=10"
+                         alt="Modern formal suit style" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Modern Fit Suit</h3>
+                    <p class="description">A contemporary fit for a confident look.</p>
+                    <div class="price-row">
+                        <span class="price">₹5,499</span>
+                        <span class="old-price">₹6,999</span>
+                    </div>
+                    <button class="add-btn" data-name="Modern Fit Suit" data-price="5499">
+                       ADD TO CART
+                    </button>
+                </div>
+            </article>
+
+            <!-- PRODUCT 8 -->
+            <article class="product-card" data-category="premium">
+                <div class="image-wrap">
+                    <span class="tag">EXCLUSIVE</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ96mD42pZU1oeTyWaXQ7cyM8iFBLO4Rx-QrNdtMYDu3g&s=10"
+                         alt="Contemporary men's tailored outfit" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <h3>Executive Evening Suit</h3>
+                    <p class="description">An elegant option for evening occasions.</p>
+                    <div class="price-row">
+                        <span class="price">₹7,999</span>
+                        <span class="old-price">₹9,499</span>
+                    </div>
+                    
+                <button class="add-btn" data-name="Executive Evening Suit" data-price="7999">
+                    ADD TO CART
+                </button>
+
+                </div>
+            </article>
+
+        </div>
+
+        <div class="no-results" id="noResults">
+            No suits found. Try another search or choose a different category.
+        </div>
+
+        <!-- CUSTOM SUIT BANNER -->
+        <section class="custom-banner">
+            <h2>Dress with <span>Confidence</span></h2>
+            <p>
+                Discover refined styles designed for business, celebrations
+                and memorable occasions.
+            </p>
+            <a href="FORMAL SHIRT.html" class="banner-link">EXPLORE FORMAL SHIRTS</a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">THE CLASSIC SK & SONS</div>
+        <p>THE CLASSIC GENTLEMEN</p>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="new arrival.html">New Arrivals</a>
+            <a href="suits.html">Suits</a>
+            <a href="FORMAL SHIRT.html">Formal Shirts</a>
+            <a href="accessiors.html">Accessories</a>
+            <a href="login.html">Login</a>
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 THE CLASSIC SK & SONS. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const productCards = document.querySelectorAll(".product-card");
+        const noResults = document.getElementById("noResults");
+
+        let selectedCategory = "all";
+
+        function filterProducts() {
+            const searchText = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            productCards.forEach(function(card) {
+                const category = card.dataset.category;
+                const productText = card.innerText.toLowerCase();
+
+                const matchesCategory =
+                    selectedCategory === "all" ||
+                    category === selectedCategory;
+
+                const matchesSearch = productText.includes(searchText);
+                const shouldShow = matchesCategory && matchesSearch;
+
+                card.style.display = shouldShow ? "" : "none";
+
+                if (shouldShow) {
+                    visibleCount++;
+                }
+            });
+
+            noResults.style.display = visibleCount === 0 ? "block" : "none";
+        }
+
+        searchInput.addEventListener("input", filterProducts);
+
+        filterButtons.forEach(function(button) {
+            button.addEventListener("click", function() {
+                filterButtons.forEach(function(btn) {
+                    btn.classList.remove("active");
+                });
+
+                button.classList.add("active");
+                selectedCategory = button.dataset.filter;
+                filterProducts();
+            });
+        });
+
+        // Demo cart counter: this does not process real orders.
+        
+
+const CART_KEY = "classicSKCart";
+
+function getCart() {
+    try {
+        const cart = JSON.parse(localStorage.getItem(CART_KEY));
+        return Array.isArray(cart) ? cart : [];
+    } catch (error) {
+        return [];
+    }
+}
+
+let cartDisplay = document.getElementById("cartDisplay");
+
+if (!cartDisplay) {
+    cartDisplay = document.createElement("a");
+    cartDisplay.id = "cartDisplay";
+    cartDisplay.href = "cart.html";
+    cartDisplay.textContent = "Cart (0)";
+    cartDisplay.style.cssText =
+        "color:#d4af37;font-size:14px;margin-left:20px;";
+
+    document.querySelector("header nav").appendChild(cartDisplay);
+}
+
+function updateCartCount() {
+    const cart = getCart();
+    const count = cart.reduce(
+        (sum, item) => sum + Number(item.qty || 0), 0
+    );
+    cartDisplay.textContent = "Cart (" + count + ")";
+}
+
+document.querySelectorAll(".add-btn").forEach(function(button) {
+    button.addEventListener("click", function() {
+        const card = button.closest(".product-card");
+        if (!card) return;
+
+        const name = button.dataset.name ||
+            card.querySelector("h3")?.textContent.trim();
+
+        const priceText = button.dataset.price ||
+            card.querySelector(".price")?.textContent.replace(/[^\d.]/g, "");
+
+        const price = Number(priceText);
+        const image = card.querySelector("img")?.src || "";
+
+        if (!name || !Number.isFinite(price) || price <= 0) {
+            alert("Product name or price is missing.");
+            return;
+        }
+
+        const cart = getCart();
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+            existing.qty = Number(existing.qty || 0) + 1;
+        } else {
+            cart.push({ name, price, image, qty: 1 });
+        }
+
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+        updateCartCount();
+
+        button.textContent = "ADDED TO CART ✓";
+    });
+});
+
+updateCartCount();
+
+    </script>
+
+</body>
+</html>
